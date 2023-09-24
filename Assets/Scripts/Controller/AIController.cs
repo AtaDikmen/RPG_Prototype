@@ -15,16 +15,16 @@ namespace RPG.Controller
         Health health;
         Mover mover;
 
-        Vector3 enemyLocation;
-
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 5f;
         [SerializeField] float waypointTolarence = 1f;
         [SerializeField] float waypointLifeTime = 3f;
         [Range(0, 1)]
         [SerializeField] float patrolSpeedFraction = 0.2f;
-
         [SerializeField] PatrolPath patrolPath;
+
+        Vector3 enemyLocation;
+
 
         float timeSinceLastSawPlayer;
         float timeSinceArrivedWaypoint;

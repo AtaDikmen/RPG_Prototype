@@ -8,13 +8,19 @@ namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
+        [SerializeField] float timeBetweenAttacks = 1f;
+        [SerializeField] Weapon defaultWeapon = null;
+        [SerializeField] Transform rightHandTransform = null;
+        [SerializeField] Transform leftHandTransform = null;
+
         Health targetObject;
 
-        [SerializeField] float weaponRange;
-        [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] float weaponDamage = 10f;
-
         float timeSinceLastAttack;
+
+        private void Start()
+        {
+            SpawnWeapon(defaultWeapon);
+        }
 
         private void Update()
         {
@@ -41,6 +47,13 @@ namespace RPG.Combat
                 AttackMethod();
                 GetComponent<Mover>().Cancel();
             }
+        }
+
+        public void SpawnWeapon(Weapon weapon)
+        {
+            defaultWeapon = weapon;
+            Animator animator = GetComponent<Animator>();
+            defaultWeapon.Spawn(rightHandTransform, leftHandTransform, animator);
         }
 
         private void AttackMethod()
@@ -81,12 +94,19 @@ namespace RPG.Combat
             {
                 return;
             }
-            targetObject.TakeDamage(weaponDamage);
+            if (defaultWeapon.HasProjectile())
+            {
+                defaultWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, targetObject);
+            }
+            else
+            {
+                targetObject.TakeDamage(defaultWeapon.GetDamage());
+            }
         }
 
         private bool GetIsInRange()
         {
-            return Vector3.Distance(transform.position, targetObject.transform.position) < weaponRange;
+            return Vector3.Distance(transform.position, targetObject.transform.position) < defaultWeapon.GetRange();
         }
 
         public void Cancel()

@@ -17,10 +17,13 @@ namespace RPG.Controller
 
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 5f;
+        [SerializeField] float aggroCooldownTime = 5f;
         [SerializeField] float waypointTolarence = 1f;
         [SerializeField] float waypointLifeTime = 3f;
         [Range(0, 1)]
         [SerializeField] float patrolSpeedFraction = 0.2f;
+        [SerializeField] float shoutDistance = 5f;
+
         [SerializeField] PatrolPath patrolPath;
 
         Vector3 enemyLocation;
@@ -28,6 +31,8 @@ namespace RPG.Controller
 
         float timeSinceLastSawPlayer;
         float timeSinceArrivedWaypoint;
+        float timeSinceAggrevate = Mathf.Infinity;
+
         int currentWaypointIndex = 0;
 
         void Start()
@@ -46,10 +51,12 @@ namespace RPG.Controller
                 return;
             }
 
-            if (DistanceToPlayer() < chaseDistance && fighter.CanAttack(player))
+            if (IsAggrevated() && fighter.CanAttack(player))
             {
                 timeSinceLastSawPlayer = 0;
                 fighter.Attack(player);
+
+                AggrevateNearbyEnemies();
             }
             else if (timeSinceLastSawPlayer < suspicionTime)
             {
@@ -78,6 +85,29 @@ namespace RPG.Controller
 
             timeSinceLastSawPlayer += Time.deltaTime;
             timeSinceArrivedWaypoint += Time.deltaTime;
+            timeSinceAggrevate += Time.deltaTime;
+        }
+
+        private void AggrevateNearbyEnemies()
+        {
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position, shoutDistance, Vector3.up, 0);
+            foreach (RaycastHit hit in hits)
+            {
+                AIController ai = hit.collider.GetComponent<AIController>();
+                if (ai == null) continue;
+
+                ai.Aggrevate();
+            }
+        }
+
+        private bool IsAggrevated()
+        {
+            return DistanceToPlayer() < chaseDistance || timeSinceAggrevate < aggroCooldownTime;
+        }
+
+        public void Aggrevate()
+        {
+            timeSinceAggrevate = 0;
         }
 
         private Vector3 GetNextWayPoint()

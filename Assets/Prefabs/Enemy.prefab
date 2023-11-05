@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1738370053678753621}
     m_Modifications:
     - target: {fileID: 3918345414028325791, guid: 27fb59383e3aaad41935f1f30d3926d5, type: 3}
@@ -56,10 +57,18 @@ PrefabInstance:
       value: Enemy Model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27fb59383e3aaad41935f1f30d3926d5, type: 3}
 --- !u!4 &2909281189410310553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2909281189731167164, guid: 27fb59383e3aaad41935f1f30d3926d5, type: 3}
+  m_PrefabInstance: {fileID: 522314277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3918345414076633530 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3918345414028325791, guid: 27fb59383e3aaad41935f1f30d3926d5, type: 3}
   m_PrefabInstance: {fileID: 522314277}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7770433177164604306 stripped
@@ -72,11 +81,40 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4967864468460610287, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
       propertyPath: health
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: -4967864468460610287, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4967864468460610287, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4967864468460610287, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: -578791867796219511}
+    - target: {fileID: -4967864468460610287, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4967864468460610287, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Aggrevate
+      objectReference: {fileID: 0}
+    - target: {fileID: -4967864468460610287, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RPG.Controller.AIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -4967864468460610287, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1810101166, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
       propertyPath: weapon
@@ -151,6 +189,24 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2593501128133953624, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3918345414076633530}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2593501128133953637, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8583581677807885862}
+    - targetCorrespondingSourceObject: {fileID: 2593501128133953637, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6511590288629051704}
+    - targetCorrespondingSourceObject: {fileID: 2593501128133953637, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -578791867796219511}
+    - targetCorrespondingSourceObject: {fileID: 2593501128133953637, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6022162010711575162}
   m_SourcePrefab: {fileID: 100100000, guid: dab0478cd3c18fb4ea1aa99f94ef1fc8, type: 3}
 --- !u!4 &1738370053678753621 stripped
 Transform:
@@ -169,12 +225,23 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738370053678753640}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -186,8 +253,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738370053678753640}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.3
   m_Height: 1.8638957
   m_Direction: 1

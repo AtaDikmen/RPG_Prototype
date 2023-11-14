@@ -265,9 +265,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.3
-  m_Height: 1.8638957
+  m_Height: 1.8180381
   m_Direction: 1
-  m_Center: {x: 0.005829096, y: 0.8674177, z: 0}
+  m_Center: {x: 0.005829096, y: 0.89034647, z: 0}
 --- !u!114 &-578791867796219511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,9 +282,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 5
   suspicionTime: 5
+  aggroCooldownTime: 5
   waypointTolarence: 1
   waypointLifeTime: 3
   patrolSpeedFraction: 0.2
+  shoutDistance: 5
   patrolPath: {fileID: 0}
 --- !u!114 &6022162010711575162
 MonoBehaviour:

@@ -35,7 +35,14 @@ namespace RPG.Core
 
             for (int i = 0; i < 4; i++)
             {
-                health += 10f;
+                if (health >= 200f)
+                {
+                    health = 200f;
+                }
+                else
+                {
+                    health += 10f;
+                }
                 _particleSystem.Play();
                 yield return new WaitForSeconds(0.5f);
                 

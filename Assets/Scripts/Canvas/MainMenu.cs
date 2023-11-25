@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,7 +37,7 @@ namespace RPG.Canvas
             {
                 float progress = Mathf.Clamp01(Operation.progress / 0.9f);
                 loadBar.fillAmount = progress;
-                progressText.text = "%" + progress * 100;
+                progressText.text = "%" + Math.Round((progress * 100), 1);
 
                 yield return null;
             }

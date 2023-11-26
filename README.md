@@ -2,9 +2,9 @@
 First RPG Project
 
 
-Using the Udemy courses I have taken, I attempted to create a prototype of a role-playing game (RPG) for the first time. In this process, which lasted for a couple of weeks, I learned the mechanics and fundamentals of RPGs.
+- Using the Udemy courses I have taken, I attempted to create a prototype of a role-playing game (RPG) for the first time. In this process, which lasted for a couple of weeks, I learned the mechanics and fundamentals of RPGs.
 
-The fundamental logic of the game is to eliminate a bandit camp. Within the game, we have two different types of weapons: one is a sword, and the other is a bow. Additionally, there is a health elixir that we can utilize by pressing the E key.
+- The fundamental logic of the game is to eliminate a bandit camp. Within the game, we have two different types of weapons: one is a sword, and the other is a bow. Additionally, there is a health elixir that we can utilize by pressing the E key.
 
 Gameplay Video Link: https://youtu.be/2woNioh5Xac
 
